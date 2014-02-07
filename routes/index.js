@@ -2,7 +2,7 @@
 var data = require('../data.json');
 
 exports.view = function(req, res){
-	var newFriends = data.friends;
+	var friendList = data.friends;
 	var name = req.query.name;
 	var friend = {
 		'name': req.query.name,
@@ -10,6 +10,6 @@ exports.view = function(req, res){
 		'imageURL': 'http://lorempixel.com/400/400/people'
 	};
 	data['friends'].push(friend);
-	res.render('index', {'friends': newFriends});
+	res.render('index', {'friends': friendList});
 };
 
